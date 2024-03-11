@@ -4,7 +4,7 @@ using namespace std;
 
 class Persona{
 
-    public:
+    private:
     int tipoDoc;
     int documento;
     string nombre;
@@ -13,9 +13,99 @@ class Persona{
     int edad;
     int sexo;
     double peso;
-    Persona(){
-        
-    };
+    //Accesores set para modificar y get para mostrar 
+
+    void settipoDoc(int _tipoDoc){
+
+        tipoDoc = _tipoDoc;
+
+    }
+
+    int gettipoDoc(){
+
+        return tipoDoc;
+
+    }
+    void setdocumento(int _documento){
+
+        documento = _documento;
+
+    }
+
+    int getdocumento(){
+
+        return documento;
+
+    }
+    void setestatura(double _estatura){
+
+        estatura = _estatura;
+
+    }
+
+    double getestatura(){
+
+        return estatura;
+
+    }
+    void setpeso(double _peso){
+
+        peso = _peso;
+
+    }
+
+    double getpeso(){
+
+        return peso ;
+
+    }
+    void setedad(int _edad){
+
+        edad = _edad;
+
+    }
+
+    int getedad(){
+
+        return edad;
+
+    }
+    void setsexo(int _sexo){
+
+         sexo= _sexo;
+
+    }
+
+    int getsexo(){
+
+        return sexo;
+
+    }
+    void setnombre(string _nombre){
+
+        nombre = _nombre;
+
+    }
+
+    string getnombre(){
+
+        return nombre;
+
+    }
+    void set(string _apellido){
+
+         apellido = _apellido;
+
+    }
+
+    string getapellido(){
+
+        return apellido;
+
+    }
+
+
+
     
 
     public:
