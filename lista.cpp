@@ -1,4 +1,5 @@
 #include<iostream>
+
 #include<list>
 using namespace std;
 template <typename T>
@@ -68,6 +69,29 @@ void cargar(void);
 list<int> Lista;
 push_back(elemento)
 nombredeLista.proceso*/
+/*lista enlazada*/
+struct  Node
+{
+    int data;
+    Node*next;
+    Node(string val):data(val),next(nullptr){}
+};
+//crear la funcion que me permite insertar
+void insertarInicio(Node &head, string val){
+    Node*newNode=newNode(val);
+    newNode->next=head;
+    head=newNode;
+
+}
+//funcion que muestre la lista
+void imprimirLista(Node* head){
+    while (head!=nullptr)
+    {
+        cout<< head->data<<" ";
+        head=head->next;
+    }
+    cout<<endl;
+}
 
 
 
@@ -105,6 +129,19 @@ frutas.resize(10);
 frutas.empty();
 frutas.size();
 frutas.max_size();
+Node*head=nullptr;
+
+insertarInicio(head,3/*aqui va los nombres de las canciones*/)
+cout<<"Lista Mafe"<<endl;
+imprimirLista(head);
 
 return 0;
 };
+/* LISTAS ENLAZADAS
+
+
+
+
+
+
+*/

@@ -14,3 +14,13 @@ crear listas
 push_back(elemento)
 TAREA: LISTA DE CANCIONES, CREAR UNA LISTA DE REPRODUCCION, LISTA ENLAZADA CON MI AMIGO
 TIPO SPOTIFY (JAM)*/
+
+/* LISTAS ENLAZADAS
+ definir la estructura Nodo de la lista enlazada
+ 
+
+
+
+
+
+*/
