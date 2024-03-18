@@ -28,6 +28,15 @@ class Nodo{
         this->next=next;
 
     }
-
-
-} 
+};
+template<typename T>
+class Lista{
+    private:
+    nodo<T>*ptr;
+    int size;
+    public:
+    lista(){
+        ptr=NULL;
+        size=0;
+    }
+};
