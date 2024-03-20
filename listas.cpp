@@ -32,7 +32,7 @@ class Nodo{
 template<typename T>
 class Lista{
     private:
-    nodo<T>*ptr;
+    Nodo<T>*ptr;
     int size;
     public:
     lista(){

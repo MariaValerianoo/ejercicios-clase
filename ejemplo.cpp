@@ -1,7 +1,55 @@
 #include <iostream>
-#include <list>
 #include <string>
 using namespace std;
+
+template<typename T>
+class Nodo {
+public:
+    T dato;
+    Nodo<T>* siguiente;
+
+    Nodo() : siguiente(nullptr) {}
+    Nodo(T valor) : dato(valor), siguiente(nullptr) {}
+};
+template<typename T>
+class Nodo1 {
+public:
+    T dato;
+    Nodo1<T>* siguiente;
+
+    Nodo1() : siguiente(nullptr) {}
+    Nodo1(T valor) : dato(valor), siguiente(nullptr) {}
+};
+
+template<typename T>
+class ListaEnlazada {
+private:
+    Nodo<T>* cabeza;
+    int tamano;
+
+public:
+    ListaEnlazada() : cabeza(nullptr), tamano(0) {}
+
+    void insertarAlInicio(T valor) {
+        Nodo<T>* nuevo = new Nodo<T>(valor);
+        nuevo->siguiente = cabeza;
+        cabeza = nuevo;
+        tamano++;
+    }
+
+    void mostrar() {
+        Nodo<T>* actual = cabeza;
+        while (actual != nullptr) {
+            cout << actual->dato << " ";
+            actual = actual->siguiente;
+        }
+        cout << endl;
+    }
+
+    int size() const {
+        return tamano;
+    }
+};
 
 class Cancion {
 private:
@@ -9,9 +57,8 @@ private:
     string artista;
     float duracion;
 public:
-    Cancion() {
+    Cancion() {}
 
-    }
     string getNomCancion() const {
         return nomCancion;
     }
@@ -23,6 +70,7 @@ public:
     float getDuracion() const {
         return duracion;
     }
+
     void setNomCancion(string nombre) {
         nomCancion = nombre;
     }
@@ -36,10 +84,9 @@ public:
     }
 };
 
-
 class ListaReproduccion {
 private:
-    list<Cancion> canciones;
+    ListaEnlazada<Cancion> canciones;
 public:
     void agregarCancion() {
         Cancion nuevaCancion;
@@ -47,7 +94,7 @@ public:
         float duracion;
 
         cout << "Nombre de la cancion: ";
-        cin.ignore(); // Ignorar el salto de línea anterior
+        cin.ignore();
         getline(cin, nombre);
         nuevaCancion.setNomCancion(nombre);
 
@@ -56,19 +103,14 @@ public:
         nuevaCancion.setArtista(artista);
 
         cout << "Duracion (en minutos): ";
-        cin >> duracion ;
+        cin >> duracion;
         nuevaCancion.setDuracion(duracion);
 
-        canciones.push_back(nuevaCancion);
+        canciones.insertarAlInicio(nuevaCancion);
     }
 
     void mostrarLista() {
-        for (const auto& cancion : canciones) {
-            cout << "Cancion: " << cancion.getNomCancion() << endl;
-            cout << "Artista: " << cancion.getArtista() << endl;
-            cout << "Duracion: " << cancion.getDuracion() << " minutos" << endl;
-            cout << endl;
-        }
+        canciones.mostrar();
     }
 };
 
@@ -85,18 +127,18 @@ int main() {
         cin >> opcion;
 
         switch (opcion) {
-            case 1:
-                lista.agregarCancion();
-                break;
-            case 2:
-                cout << "Lista de reproduccion:" << endl;
-                lista.mostrarLista();
-                break;
-            case 3:
-                cout << "Hasta luego!" << endl;
-                break;
-            default:
-                cout << "Opcion no valida. Intentalo de nuevo." << endl;
+        case 1:
+            lista.agregarCancion();
+            break;
+        case 2:
+            cout << "Lista de reproduccion:" << endl;
+            lista.mostrarLista();
+            break;
+        case 3:
+            cout << "Hasta luego!" << endl;
+            break;
+        default:
+            cout << "Opcion no valida. Intentalo de nuevo." << endl;
         }
     } while (opcion != 3);
 
