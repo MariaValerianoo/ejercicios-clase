@@ -17,9 +17,10 @@ TIPO SPOTIFY (JAM)*/
 
 /* LISTAS ENLAZADAS
  definir la estructura Nodo de la lista enlazada
- 
 
-
+*/
+/* ordenamientos:
+vectores ordenamiento burbuja
 
 
 

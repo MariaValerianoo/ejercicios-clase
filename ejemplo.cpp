@@ -11,15 +11,7 @@ public:
     Nodo() : siguiente(nullptr) {}
     Nodo(T valor) : dato(valor), siguiente(nullptr) {}
 };
-template<typename T>
-class Nodo1 {
-public:
-    T dato;
-    Nodo1<T>* siguiente;
 
-    Nodo1() : siguiente(nullptr) {}
-    Nodo1(T valor) : dato(valor), siguiente(nullptr) {}
-};
 
 template<typename T>
 class ListaEnlazada {
