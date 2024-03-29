@@ -53,6 +53,7 @@ public:
         return false;
     }
 
+
     // Método para buscar un elemento en la lista, si no está, lo agrega y luego imprime la lista
     void buscarYAgregar(int valor) {
         if (!buscar(valor)) {

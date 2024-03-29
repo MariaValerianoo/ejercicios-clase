@@ -58,15 +58,15 @@ public:
 
 int main() {
     ListaEnlazada lista;
-
+    lista.agregarAlInicio(4);
     lista.agregarAlInicio(3);
     lista.agregarAlInicio(2);
     lista.agregarAlInicio(1);
 
     lista.imprimir(); // Salida esperada: 1 2 3
 
-    lista.agregarAlFinal(4);
     lista.agregarAlFinal(5);
+    lista.agregarAlFinal(6);
 
     lista.imprimir(); // Salida esperada: 1 2 3 4 5
 
